@@ -1,5 +1,14 @@
 # Server Changelog
 
+## v137_2
+
+**We are shutting down the legacy build server; existing builds will continue to work.** Legacy _pinned_ URLs will now be redirected to the new routes:
+
+```
+https://esm.sh/v135/react-dom@19.2.5 -> https://esm.sh/react-dom@19.2.5
+https://esm.sh/react-dom@19.2.5?pin=v135 -> https://esm.sh/react-dom@19.2.5
+```
+
 ## v137_1
 
 * Support `keepNames` and `ignoreAnnotations` options in the `esm.sh` field of `package.json`. (#1341)
