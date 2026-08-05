@@ -5,6 +5,7 @@ import (
 	"errors"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -35,12 +36,12 @@ func runLoaderContext(ctx context.Context, loaderJsPath string, filename string,
 		"--no-config",
 		"--no-lock",
 		"--cached-only",
-		"--allow-read=.",
 		"--no-prompt",
 		"--quiet",
 		loaderJsPath,
 		filename, // args[0]
 	)
+	cmd.Dir = filepath.Dir(loaderJsPath)
 	cmd.Env = append(os.Environ(), "DENO_NO_UPDATE_CHECK=1", "DENO_NO_PACKAGE_JSON=1")
 	cmd.Stdin = strings.NewReader(code)
 	output, err := cmd.Output()
