@@ -25,7 +25,7 @@ import (
 	"github.com/ije/gox/utils"
 )
 
-var cjsModuleLexerVersion = "1.0.8"
+var cjsModuleLexerVersion = "1.1.0"
 var cjsModuleLexerIgnoredPackages = set.New(
 	"@babel/types",
 	"cheerio",
